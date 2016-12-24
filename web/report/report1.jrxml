@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dd3b9e92-3e72-4d21-8560-9cdc160e1908">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     arma.`SERIE_ARMA` AS arma_SERIE_ARMA,
+     arma.`NUMERO_BALISTICA_ARMA` AS arma_NUMERO_BALISTICA_ARMA,
+     arma.`PRECIO_ARMA` AS arma_PRECIO_ARMA,
+     arma.`CODIGO_ARMA` AS arma_CODIGO_ARMA
+FROM
+     `arma` arma]]>
+	</queryString>
+	<field name="arma_SERIE_ARMA" class="java.lang.String"/>
+	<field name="arma_NUMERO_BALISTICA_ARMA" class="java.lang.Integer"/>
+	<field name="arma_PRECIO_ARMA" class="java.lang.Double"/>
+	<field name="arma_CODIGO_ARMA" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="f26ab55b-0a9a-41cd-b67c-a79e9b621152" x="14" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[arma_SERIE_ARMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="856a2450-68ed-4544-8cee-7e11b441acce" x="145" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[arma_NUMERO_BALISTICA_ARMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="75626d0c-a221-4ddb-ae29-d6315d2875e0" x="284" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[arma_PRECIO_ARMA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement uuid="30f45783-7238-41a0-a740-556470eef781" x="14" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{arma_SERIE_ARMA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="74d65b90-e0e1-4768-8e65-3d98c95a8d9f" x="145" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{arma_NUMERO_BALISTICA_ARMA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1b8dca26-cc45-4bf1-a937-d195dec8df96" x="284" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{arma_PRECIO_ARMA}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="2331a589-a2cc-4a1f-a7b1-0a9c86035879" x="14" y="24" width="544" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
